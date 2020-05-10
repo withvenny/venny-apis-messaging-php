@@ -735,6 +735,7 @@
                     if(isset($request['images'])){$refinements.="message_images"." ILIKE "."'%".$request['images']."%' AND ";}
                     if(isset($request['deleted'])){$refinements.="message_deleted"." ILIKE "."'%".$request['deleted']."%' AND ";}
                     if(isset($request['profile'])){$refinements.="profile_id"." ILIKE "."'%".$request['profile']."%' AND ";}
+                    if(isset($request['thread'])){$refinements.="thread_id"." ILIKE "."'%".$request['thread']."%' AND ";}
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
@@ -788,7 +789,8 @@
                             'attributes' => json_decode($row['message_attributes']),
                             'body' => $row['message_body'],
                             'images' => json_decode($row['message_images']),
-                            'deleted' => $row['message_deleted']
+                            'deleted' => $row['message_deleted'],
+                            'thread' => $row['thread_id']
 
                         ];
 
@@ -877,6 +879,7 @@
             if(isset($request['body'])){$statement->bindValue(':message_body', $request['body']);}
             if(isset($request['images'])){$statement->bindValue(':message_images', $request['images']);}
             if(isset($request['deleted'])){$statement->bindValue(':message_deleted', $request['deleted']);}
+            
             $statement->bindValue(':id', $id);
 
             // update data in the database
