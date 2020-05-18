@@ -882,6 +882,8 @@
             
             $statement->bindValue(':id', $id);
 
+            
+
             // update data in the database
             $statement->execute();
 
