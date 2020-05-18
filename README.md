@@ -2,9 +2,9 @@
 
 # Messaging from Venny
 
-A digital asset management API.
+A direct message management API.
 
-We believe that enabling users to share their media securely is a cornerstone of modern digital experiences.
+We believe that enabling users to exchange messages securely is a cornerstone of modern digital experiences.
 
 Using Venny I/O APIs and React Native (via Expo) we'll explore a mobile experience framework you can evolve into your own.
 
