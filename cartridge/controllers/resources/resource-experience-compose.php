@@ -7,6 +7,7 @@
     use Messaging\Connection as Connection;
     use Messaging\Token as Token;
     use Messaging\Message as Message;
+    use Messaging\Thread as Thread;
 
     // connect to the PostgreSQL database
     $pdo = Connection::get()->connect();
