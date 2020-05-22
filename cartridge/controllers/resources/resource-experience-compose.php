@@ -44,9 +44,7 @@
             $request['domain'] = 'threads';
 
             // insert a stock into the stocks table
-            $id = $thread->insertThread($request);
-
-            $request['id'] = $id;
+            $request['id'] = $thread->insertThread($request);
 
             // get person ID's details
             $thread_details = $thread->selectThreads($request);
@@ -56,6 +54,9 @@
             //echo json_encode($request); exit;
 
             $request['domain'] = 'messages';
+
+            // insert a stock into the stocks table
+            $request['id'] = $message->insertMessage($request);
 
             //echo json_encode($request); exit;
 
