@@ -20,7 +20,7 @@
     if(isset($_REQUEST['id'])){$request['id'] = clean($_REQUEST['id']);}		
     if(isset($_REQUEST['attributes'])){$request['attributes'] = clean($_REQUEST['attributes']);}		
     if(isset($_REQUEST['body'])){$request['body'] = clean($_REQUEST['body']);}		
-    if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
+    //if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
     if(isset($_REQUEST['deleted'])){$request['deleted'] = clean($_REQUEST['deleted']);}
     if(isset($_REQUEST['thread'])){$request['thread'] = clean($_REQUEST['thread']);}
     if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}
