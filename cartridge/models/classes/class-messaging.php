@@ -374,7 +374,7 @@
                     // SKIP ID
                     if(isset($request['attributes'])){$refinements.="thread_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}
                     if(isset($request['title'])){$refinements.="thread_title"." ILIKE "."'%".$request['title']."%' AND ";}
-                    if(isset($request['participants'])){$refinements.="thread_participants"." ILIKE "."'%".$request['participants']."%' AND ";}
+                    //if(isset($request['participants'])){$refinements.="thread_participants"." ILIKE "."'%".$request['participants']."%' AND ";}
                     if(isset($request['preview'])){$refinements.="thread_preview"." ILIKE "."'%".$request['preview']."%' AND ";}
 
                     //echo $conditions . 'conditions1<br/>';
