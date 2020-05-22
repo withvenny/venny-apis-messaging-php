@@ -43,6 +43,11 @@
             //
             $request['domain'] = 'threads';
 
+            // insert a stock into the stocks table
+            $id = $thread->insertThread($request);
+
+            $request['id'] = $id;
+
             // get person ID's details
             $thread_details = $thread->selectThreads($request);
 
