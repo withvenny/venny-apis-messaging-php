@@ -48,6 +48,7 @@
 
             //
             $request['thread'] = $thread_details['data'][0]['id'];
+            echo json_encode($request); exit;
 
             $request['domain'] = 'message';
 
