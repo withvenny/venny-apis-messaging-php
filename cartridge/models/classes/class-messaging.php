@@ -320,7 +320,9 @@
                     thread_title,
                     thread_participants,
                     thread_preview,
-                    profile_ID
+                    profile_ID,
+                    app_ID,
+                    time_finished
 
                 ";
 
@@ -432,6 +434,9 @@
                             'participants' => json_decode($row['thread_participants']),
                             'preview' => $row['thread_preview'],
                             'profile' => $row['profile_id'],
+                            'app' => $row['app_ID'],
+                            'when' => $row['time_finished'],
+                            'updated' => $row['time_updated']
 
                         ];
 
@@ -679,7 +684,9 @@
                     message_images,
                     message_deleted,
                     thread_id,
-                    profile_id
+                    profile_id,
+                    app_id,
+                    time_finished
 
                 ";
 
@@ -790,7 +797,10 @@
                             'body' => $row['message_body'],
                             'images' => json_decode($row['message_images']),
                             'deleted' => $row['message_deleted'],
-                            'thread' => $row['thread_id']
+                            'thread' => $row['thread_id'],
+                            'app' => $row['app_id'],
+                            'when' => $row['time_finished'],
+                            'updated' => $row['time_updated']
 
                         ];
 
