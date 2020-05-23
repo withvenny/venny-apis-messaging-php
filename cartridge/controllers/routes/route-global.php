@@ -26,6 +26,7 @@
                 //
                 case 'threads': require 'controllers/resources/resource-messaging-threads.php'; break;
                 case 'messages': require 'controllers/resources/resource-messaging-messages.php'; break;
+                case 'compose': require 'controllers/resources/resource-experience-compose.php'; break;
     
                 //
                 default: header("Location: template-guest-hello.php");
