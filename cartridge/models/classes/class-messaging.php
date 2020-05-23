@@ -322,7 +322,8 @@
                     thread_preview,
                     profile_ID,
                     app_ID,
-                    time_finished
+                    time_updated,
+                    time_finished,
 
                 ";
 
@@ -686,6 +687,7 @@
                     thread_id,
                     profile_id,
                     app_id,
+                    time_updated,
                     time_finished
 
                 ";
