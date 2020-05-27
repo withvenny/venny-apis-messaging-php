@@ -323,7 +323,7 @@
                     profile_ID,
                     app_ID,
                     time_updated,
-                    time_finished,
+                    time_finished
 
                 ";
 
@@ -366,7 +366,7 @@
                     // bind value to the :id parameter
                     $statement->bindValue(':id', $request['id']);
 
-                    echo $sql; exit;
+                    //echo $sql; exit;
 
                 } else {
 
