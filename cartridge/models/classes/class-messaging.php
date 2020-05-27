@@ -374,7 +374,7 @@
                 elseif(!empty($request['participants'])) {
 
                     $conditions.= ' WHERE ';
-                    $conditions.= 'thread_participants ->\'contributors\' @> \'["prf_78be19a880cbc","prf_8072738b47905"]\'::jsonb;';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \'["prf_78be19a880cbc","prf_8072738b47905"]\'::jsonb';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
@@ -397,7 +397,7 @@
                     // bind value to the :id parameter
                     //$statement->bindValue(':id', $request['id']);
 
-                    echo $sql; exit;
+                    //echo $sql; exit;
 
                 } else {
 
