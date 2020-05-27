@@ -367,6 +367,36 @@
                     $statement->bindValue(':id', $request['id']);
 
                     //echo $sql; exit;
+                
+                }
+
+                                    //
+                elseif(!empty($request['participants'])) {
+
+                    $conditions.= ' WHERE ';
+                    $conditions.= ' ' . $prefix . '_id = :id ';
+                    $conditions.= ' AND active = 1 ';
+                    $conditions.= ' ORDER BY time_finished DESC ';
+
+                    $subset = " LIMIT 1";
+
+                    $sql = "SELECT ";
+                    $sql.= $columns;
+                    $sql.= " FROM " . $table;
+                    $sql.= $conditions;
+                    $sql.= $subset;
+                    
+                    //echo json_encode($request['id']);
+                    //echo '<br/>';
+                    //echo $sql; exit;
+
+                    //
+                    $statement = $this->pdo->prepare($sql);
+
+                    // bind value to the :id parameter
+                    $statement->bindValue(':id', $request['id']);
+
+                    echo $sql; exit;
 
                 } else {
 
