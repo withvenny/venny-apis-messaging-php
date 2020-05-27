@@ -435,7 +435,7 @@
                             'participants' => json_decode($row['thread_participants']),
                             'preview' => $row['thread_preview'],
                             'profile' => $row['profile_id'],
-                            'app' => $row['app_ID'],
+                            'app' => $row['app_id'],
                             'when' => $row['time_finished'],
                             'updated' => $row['time_updated']
 
