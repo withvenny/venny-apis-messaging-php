@@ -373,7 +373,8 @@
                                     //
                 elseif(!empty($request['participants'])) {
 
-                    $conditions.= 'thread_participants ->\'contributors\' @> \'["prf_78be19a880cbc","prf_8072738b47905"]\'::jsonb;';                   $conditions.= ' WHERE ';
+                    $conditions.= ' WHERE ';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \'["prf_78be19a880cbc","prf_8072738b47905"]\'::jsonb;';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
