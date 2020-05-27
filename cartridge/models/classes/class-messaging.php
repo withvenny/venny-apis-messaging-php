@@ -739,12 +739,12 @@
                     $refinements = "";
 
                     // SKIP ID
-                    if(isset($request['attributes'])){$refinements.="message_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}
+                    //if(isset($request['attributes'])){$refinements.="message_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}
                     if(isset($request['body'])){$refinements.="message_body"." ILIKE "."'%".$request['body']."%' AND ";}
-                    if(isset($request['images'])){$refinements.="message_images"." ILIKE "."'%".$request['images']."%' AND ";}
-                    if(isset($request['deleted'])){$refinements.="message_deleted"." ILIKE "."'%".$request['deleted']."%' AND ";}
-                    if(isset($request['profile'])){$refinements.="profile_id"." ILIKE "."'%".$request['profile']."%' AND ";}
-                    if(isset($request['thread'])){$refinements.="thread_id"." ILIKE "."'%".$request['thread']."%' AND ";}
+                    //if(isset($request['images'])){$refinements.="message_images"." ILIKE "."'%".$request['images']."%' AND ";}
+                    if(isset($request['deleted'])){$refinements.="message_deleted"." = "."'".$request['deleted']."' AND ";}
+                    //if(isset($request['profile'])){$refinements.="profile_id"." = "."'%".$request['profile']."%' AND ";}
+                    if(isset($request['thread'])){$refinements.="thread_id"." = "."'".$request['thread']."' AND ";}
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
