@@ -394,7 +394,7 @@
                     $statement = $this->pdo->prepare($sql);
 
                     // bind value to the :id parameter
-                    $statement->bindValue(':id', $request['id']);
+                    //$statement->bindValue(':id', $request['id']);
 
                     echo $sql; exit;
 
