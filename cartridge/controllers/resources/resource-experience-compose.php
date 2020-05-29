@@ -30,8 +30,6 @@
     if(isset($_REQUEST['preview'])){$request['preview'] = clean($_REQUEST['preview']);}
     if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);} 
 
-    echo $request['thread'];exit;
-
     //
     if($_SERVER['REQUEST_METHOD']=='POST') {
 
@@ -43,15 +41,17 @@
             $token = new Token($pdo);
 
             if(!isset($request['thread'])) {
+
                 //
                 $request['domain'] = 'threads';
 
                 // insert a stock into the stocks table
-                $request['id'] = $thread->insertThread($request);
+                $request['thread'] = $thread->insertThread($request);
 
-                // get person ID's details
-                $thread_details = $thread->selectThreads($request);
             }
+
+            // get person ID's details
+            $thread_details = $thread->selectThreads($request['thread']);
 
             //
             $request['thread'] = $thread_details['data'][0]['id'];
