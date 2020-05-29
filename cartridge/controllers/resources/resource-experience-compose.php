@@ -40,10 +40,10 @@
             $thread = new Thread($pdo);
             $token = new Token($pdo);
 
-            if(!isset($request['thread'])) {
+            //
+            $request['domain'] = 'threads';
 
-                //
-                $request['domain'] = 'threads';
+            if(!isset($request['thread'])) {
 
                 // insert a stock into the stocks table
                 $request['thread'] = $thread->insertThread($request);
