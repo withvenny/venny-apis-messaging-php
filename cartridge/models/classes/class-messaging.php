@@ -358,7 +358,7 @@
                     $sql.= $conditions;
                     $sql.= $subset;
                     
-                    //echo json_encode($request['id']);
+                    echo json_encode($request['id']);
                     //echo '<br/>';
                     //echo $sql; exit;
 
@@ -368,7 +368,7 @@
                     // bind value to the :id parameter
                     $statement->bindValue(':id', $request['id']);
 
-                    //echo $sql; exit;
+                    echo $sql; exit;
                 
                 }
 
