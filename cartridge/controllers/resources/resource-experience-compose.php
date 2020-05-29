@@ -51,7 +51,7 @@
             }
 
             // get person ID's details
-            $thread_details = $thread->selectThreads($request['thread']);
+            $thread_details = $thread->selectThreads($request);
 
             //
             $request['thread'] = $thread_details['data'][0]['id'];
