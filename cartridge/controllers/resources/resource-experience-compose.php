@@ -23,7 +23,7 @@
     if(isset($_REQUEST['body'])){$request['body'] = clean($_REQUEST['body']);}		
     //if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
     if(isset($_REQUEST['deleted'])){$request['deleted'] = clean($_REQUEST['deleted']);}
-    //if(isset($_REQUEST['thread'])){$request['thread'] = clean($_REQUEST['thread']);}
+    if(isset($_REQUEST['thread'])){$request['thread'] = clean($_REQUEST['thread']);}
     if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}
     if(isset($_REQUEST['title'])){$request['title'] = clean($_REQUEST['title']);}
     if(isset($_REQUEST['participants'])){$request['participants'] = clean($_REQUEST['participants']);}
@@ -40,14 +40,16 @@
             $thread = new Thread($pdo);
             $token = new Token($pdo);
 
-            //
-            $request['domain'] = 'threads';
+            if(!isset($request['thread'])){
+                //
+                $request['domain'] = 'threads';
 
-            // insert a stock into the stocks table
-            $request['id'] = $thread->insertThread($request);
+                // insert a stock into the stocks table
+                $request['id'] = $thread->insertThread($request);
 
-            // get person ID's details
-            $thread_details = $thread->selectThreads($request);
+                // get person ID's details
+                $thread_details = $thread->selectThreads($request);
+            }
 
             //
             $request['thread'] = $thread_details['data'][0]['id'];
