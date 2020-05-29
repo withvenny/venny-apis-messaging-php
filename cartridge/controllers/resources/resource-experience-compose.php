@@ -43,10 +43,15 @@
             //
             $request['domain'] = 'threads';
 
+            echo json_encode("PRE: ".$request['thread']);
+
             $request['id'] = $request['thread'];
 
             // insert a stock into the stocks table
             $request['id'] = $thread->insertThread($request);
+
+            echo json_encode("POSTthread: ".$request['thread']);
+            echo json_encode("POSTid: ".$request['thread']);
 
             // get person ID's details
             $thread_details = $thread->selectThreads($request);
