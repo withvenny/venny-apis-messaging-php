@@ -28,7 +28,9 @@
     if(isset($_REQUEST['title'])){$request['title'] = clean($_REQUEST['title']);}
     if(isset($_REQUEST['participants'])){$request['participants'] = clean($_REQUEST['participants']);}
     if(isset($_REQUEST['preview'])){$request['preview'] = clean($_REQUEST['preview']);}
-    if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}   
+    if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);} 
+
+    echo $request['thread'];exit;
 
     //
     if($_SERVER['REQUEST_METHOD']=='POST') {
@@ -40,7 +42,7 @@
             $thread = new Thread($pdo);
             $token = new Token($pdo);
 
-            if(!isset($request['thread'])){
+            if(!isset($request['thread'])) {
                 //
                 $request['domain'] = 'threads';
 
