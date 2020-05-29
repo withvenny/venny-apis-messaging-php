@@ -287,6 +287,8 @@
             
             $data = $data[0]['thread_id'];
 
+            echo json_encode($data); exit;
+
             return $data;
         
         }
