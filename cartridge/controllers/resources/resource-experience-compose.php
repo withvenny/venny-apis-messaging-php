@@ -56,6 +56,8 @@
 
             $request['domain'] = 'messages';
 
+            $request['id'] = NULL;
+
             // insert a stock into the stocks table
             $request['id'] = $message->insertMessage($request);
 
