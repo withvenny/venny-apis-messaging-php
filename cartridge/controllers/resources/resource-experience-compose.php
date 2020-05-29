@@ -28,7 +28,7 @@
     if(isset($_REQUEST['title'])){$request['title'] = clean($_REQUEST['title']);}
     if(isset($_REQUEST['participants'])){$request['participants'] = clean($_REQUEST['participants']);}
     if(isset($_REQUEST['preview'])){$request['preview'] = clean($_REQUEST['preview']);}
-    if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);} 
+    if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}   
 
     //
     if($_SERVER['REQUEST_METHOD']=='POST') {
@@ -42,6 +42,15 @@
 
             //
             $request['domain'] = 'threads';
+
+            if(!isset($request['thread'])) {
+    
+                // insert a stock into the stocks table
+                $request['id'] = $thread->insertThread($request);
+            
+            } else {
+                $request['id']=$request['thread'];
+            }
 
             // get person ID's details
             $thread_details = $thread->selectThreads($request);
