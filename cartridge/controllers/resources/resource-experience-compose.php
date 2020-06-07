@@ -45,7 +45,7 @@
 
             $thread_details = $thread->selectThreads($request);
 
-            if($thread_details['code']==204) {
+            if($thread_details['status']==204) {
 
                 // insert a stock into the stocks table
                 if(!$request['thread'] || empty($request['thread'])) {
