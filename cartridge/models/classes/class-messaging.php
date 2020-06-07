@@ -375,7 +375,8 @@
                 //
                 elseif(!empty($request['participants'])) {
 
-                    echo var_dump($request['participants']);
+                    //echo var_dump($request['participants']);
+                    echo var_dump($request['participants']['contributors']);
                     exit;
 
                     $conditions.= ' WHERE ';
