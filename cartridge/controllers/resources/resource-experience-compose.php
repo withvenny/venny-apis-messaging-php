@@ -43,14 +43,20 @@
             //
             $request['domain'] = 'threads';
 
-            // insert a stock into the stocks table
-            if(!$request['thread'] || empty($request['thread'])) {
+            $thread_details = $thread->selectThreads($request);
+
+            if($thread_details['code']==204) {
+
+                // insert a stock into the stocks table
+                if(!$request['thread'] || empty($request['thread'])) {
+                    
+                    $request['id'] = $thread->insertThread($request);
                 
-                $request['id'] = $thread->insertThread($request);
-            
-            } else { 
+                } else { 
+                    
+                    $request['id'] = $request['thread'];
                 
-                $request['id'] = $request['thread'];
+                }
             
             }
 
