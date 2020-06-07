@@ -379,6 +379,12 @@
                     $participants = $request['participants'];
                     echo var_dump($participants);
 
+                    $participants = json_decode($request['participants'],true);
+
+                    echo var_dump($participants['contributors']);
+
+
+
                     
                     // PHP  Array
                     $food = array("Cake", "Chocolate", "Ice Cream", "Pepsi", "Bread", "Fish curry", "Chicken Fry");
