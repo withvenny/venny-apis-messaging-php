@@ -375,8 +375,8 @@
                 //
                 elseif(!empty($request['participants'])) {
 
-                    $participants = $request["participants"];
-                    echo json_encode($participants['contributors']);
+                    $participants = $request['participants'];
+                    echo json_encode($participants.contributors);
 
                     $conditions.= ' WHERE ';
                     $conditions.= 'thread_participants ->\'contributors\' @> \''. $participants . '\'::jsonb';
