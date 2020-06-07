@@ -377,9 +377,7 @@
 
                     //
                     $participants = json_decode($request['participants'], true);
-                    echo $participants;
-                    $print_participants = printValues($participants);
-                    $participants = json_decode($request['participants'], true);
+                    echo json_decode($participants['contributors']);
 
                     $conditions.= ' WHERE ';
                     $conditions.= 'thread_participants ->\'contributors\' @> \''. json_encode($participants['contributors']) . '\'::jsonb';
