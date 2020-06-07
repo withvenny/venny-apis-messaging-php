@@ -375,51 +375,11 @@
                 //
                 elseif(!empty($request['participants'])) {
 
-                    echo var_dump($request['participants']);
-                    $participants = $request['participants'];
-                    echo var_dump($participants);
-
-                    $participants = json_decode($request['participants'],true);
-
-                    echo var_dump($participants['contributors']);
-
-
-
-                    
-                    // PHP  Array
-                    $food = array("Cake", "Chocolate", "Ice Cream", "Pepsi", "Bread", "Fish curry", "Chicken Fry");
-                    // array is converted as array or object
-                    echo json_encode($food, JSON_FORCE_OBJECT);
-
-                    // Store JSON data in a PHP variable
-                    $marks = '{"1001":95,"1002":80,"1003":78,"1004":90, "1005":83,"1006":92}';
-                    var_dump(json_decode($marks,true));
-
-                    //Assign JSON encoded string to a PHP variable
-$age = '{"Poll":55,"Devid":40,"Akbar":68,"Cally":70}';
-
-// Decode JSON data to PHP associative array
-$arr = json_decode($age, true);
-echo "Parsing data by using PHP Array <br/>";
-
-// Access values from the associative array
-echo $arr["Poll"]."<br/>";
-echo $arr["Devid"]."<br/>";
-echo $arr["Akbar"]."<br/>";
-echo $arr["Cally"]."<br/>";
-$obj = json_decode($age);
-echo "Parsing data by using PHP Object <br/>";
-
-// Access values from the returned object
-echo $obj->Poll."<br/>";
-echo $obj->Devid."<br/>";
-echo $obj->Akbar."<br/>";
-echo $obj->Cally."<br/>";
-
-                    exit;
+                    //
+                    $participants = json_decode($request['participants'], true);
 
                     $conditions.= ' WHERE ';
-                    $conditions.= 'thread_participants ->\'contributors\' @> \''. $participants . '\'::jsonb';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \''. $participants['contributors'] . '\'::jsonb';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
