@@ -379,7 +379,7 @@
                     $participants = json_encode($request['participants'], true);
 
                     $conditions.= ' WHERE ';
-                    $conditions.= 'thread_participants ->\'contributors\' @> \''. $participants['contributors'] . '\'::jsonb';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \''. json_encode($participants['contributors']) . '\'::jsonb';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
