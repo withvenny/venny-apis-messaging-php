@@ -377,7 +377,6 @@
 
                     //
                     $participants = json_decode($request['participants'], true);
-                    echo json_decode($participants['contributors']);
 
                     $conditions.= ' WHERE ';
                     $conditions.= 'thread_participants ->\'contributors\' @> \''. json_encode($participants['contributors']) . '\'::jsonb';
@@ -395,7 +394,7 @@
                     
                     //echo json_encode($request['participants']['contributors']);
                     //echo '<br/>';
-                    echo $sql; exit;
+                    //echo $sql; exit;
 
                     //
                     $statement = $this->pdo->prepare($sql);
