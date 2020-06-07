@@ -372,11 +372,13 @@
                 
                 }
 
-                                    //
+                //
                 elseif(!empty($request['participants'])) {
 
+                    echo $request["participants"]["contributors"];
+
                     $conditions.= ' WHERE ';
-                    $conditions.= 'thread_participants ->\'contributors\' @> \'["prf_78be19a880cbc","prf_8072738b47905"]\'::jsonb';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \''.$request["participants"]["contributors"].'\'::jsonb';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
@@ -389,9 +391,9 @@
                     $sql.= $conditions;
                     $sql.= $subset;
                     
-                    //echo json_encode($request['id']);
-                    //echo '<br/>';
-                    //echo $sql; exit;
+                    echo json_encode($request['id']);
+                    echo '<br/>';
+                    echo $sql; exit;
 
                     //
                     $statement = $this->pdo->prepare($sql);
