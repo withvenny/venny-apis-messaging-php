@@ -375,11 +375,11 @@
                 //
                 elseif(!empty($request['participants'])) {
 
-                    echo var_dump($request["participants"]);
-                    echo var_dump($request["participants"]["contributors"]);
+                    $contributors = $request["participants"];
+                    echo json_encode($contributors);
 
                     $conditions.= ' WHERE ';
-                    $conditions.= 'thread_participants ->\'contributors\' @> \''. json_decode($request["participants"]["contributors"]) . '\'::jsonb';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \''. $contributors . '\'::jsonb';
                     //$conditions.= ' ' . $prefix . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
