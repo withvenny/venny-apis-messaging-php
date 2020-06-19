@@ -34,11 +34,29 @@
 
                 // 
                 $thread = new Thread($pdo);
-            
-                // insert a stock into the stocks table
-                $id = $thread->insertThread($request);
 
-                $request['id'] = $id;
+                $thread_details = $thread->selectThreads($request);
+
+                //
+                if($thread_details['status']==204) {
+
+                    // insert a stock into the stocks table
+                    if(!isset($request['thread']) || empty($request['thread'])) {
+                        
+                        $request['id'] = $thread->insertThread($request);
+                    
+                    } else { 
+                        
+                        $request['id'] = $request['thread'];
+                    
+                    }
+                
+                }
+
+                // insert a stock into the stocks table
+                //$id = $thread->insertThread($request);
+
+                //$request['id'] = $id;
 
                 $results = $thread->selectThreads($request);
 
