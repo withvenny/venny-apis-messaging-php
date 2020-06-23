@@ -391,7 +391,7 @@
                     
                     //echo json_encode($request['participants']['contributors']);
                     //echo '<br/>';
-                    //echo $sql; exit;
+                    echo $sql; exit;
     
                     //
                     $statement = $this->pdo->prepare($sql);
