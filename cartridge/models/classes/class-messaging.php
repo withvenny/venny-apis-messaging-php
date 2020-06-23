@@ -371,8 +371,6 @@
                     //echo $sql; exit;
                 
                 }
-
-                //
                 elseif(!empty($request['participants'])) {
 
                     //
@@ -769,6 +767,36 @@
 
                     //echo $sql; exit;
 
+                } elseif(!empty($request['profile'])) {
+
+                    //
+                    $participants = json_decode($request['participants'], true);
+    
+                    $conditions.= ' WHERE ';
+                    $conditions.= 'thread_participants ->\'contributors\' @> \''. $request['profile'] . '\'::jsonb';
+                    //$conditions.= ' ' . $prefix . '_id = :id ';
+                    $conditions.= ' AND active = 1 ';
+                    $conditions.= ' ORDER BY time_finished DESC ';
+    
+                    $subset = " LIMIT 1";
+    
+                    $sql = "SELECT ";
+                    $sql.= $columns;
+                    $sql.= " FROM " . $table;
+                    $sql.= $conditions;
+                    $sql.= $subset;
+                    
+                    //echo json_encode($request['participants']['contributors']);
+                    //echo '<br/>';
+                    //echo $sql; exit;
+    
+                    //
+                    $statement = $this->pdo->prepare($sql);
+    
+                    // bind value to the :id parameter
+                    //$statement->bindValue(':id', $request['id']);
+    
+                    //echo $sql; exit;
                 } else {
 
                     $conditions = "";
