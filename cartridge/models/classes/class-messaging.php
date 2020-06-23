@@ -387,7 +387,7 @@
                     $sql.= $columns;
                     $sql.= " FROM " . $table;
                     $sql.= $conditions;
-                    $sql.= $subset;
+                    //$sql.= $subset;
                     
                     //echo json_encode($request['participants']['contributors']);
                     //echo '<br/>';
