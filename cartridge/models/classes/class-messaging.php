@@ -381,7 +381,7 @@
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
     
-                    $subset = " LIMIT 1";
+                    //$subset = " LIMIT 1";
     
                     $sql = "SELECT ";
                     $sql.= $columns;
