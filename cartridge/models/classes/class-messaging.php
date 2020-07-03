@@ -832,6 +832,7 @@
                             'images' => json_decode($row['message_images']),
                             'deleted' => $row['message_deleted'],
                             'thread' => $row['thread_id'],
+                            'profile' => $row['profile_id'],
                             'app' => $row['app_id'],
                             'when' => $row['time_finished'],
                             'updated' => $row['time_updated']
