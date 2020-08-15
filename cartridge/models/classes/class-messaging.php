@@ -478,7 +478,7 @@
                     $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=prf_8072738b47905";
 
                     $json = file_get_contents($api);
-                    $json = json_decode($json,true);
+                    $json = json_decode($json['data'][0],true);
 
                     $code = 200;
                     $message = "OK";
