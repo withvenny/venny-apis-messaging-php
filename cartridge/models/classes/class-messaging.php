@@ -469,7 +469,7 @@
                             $json['data'][0]
                         );
 
-                        print_r($contributors);
+                        echo json_decode($contributors);
                         exit;
 
                         foreach(json_decode($row['thread_participants']['contributors']) as $contributor){
