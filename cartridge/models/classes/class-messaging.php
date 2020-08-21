@@ -483,7 +483,7 @@
                         exit;
                         */
 
-                        foreach($row['thread_participants']['contributors'] as $contributor) {
+                        foreach(json_encode($row['thread_participants']['contributors']) as $contributor) {
 
                             /*
                             $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
