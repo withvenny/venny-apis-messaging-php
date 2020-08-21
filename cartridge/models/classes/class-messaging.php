@@ -460,7 +460,7 @@
 
                         $contributors=[];
 
-                        $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
+                        $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $row['profile_id'];
                         $json = file_get_contents($api);
                         $json = json_decode($json,true);
 
@@ -481,7 +481,7 @@
                             }
                             */
 
-                            $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $row['profile_id'];
+                            $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $json = file_get_contents($api);
                             $json = json_decode($json,true);
     
