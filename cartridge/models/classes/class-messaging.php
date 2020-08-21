@@ -458,19 +458,27 @@
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
 
-                        /*$contributors=[];
+                        $contributors=[];
 
                         foreach(json_decode($row['thread_participants']['contributors']) as $contributor){
 
-                            $contributors[]=$contributor;
+                            /*
+                            $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
+                            foreach ( $fruits as $value ) {
+                                echo  "$value<br />";
+                            }
+                            */
 
-                        };*/
+                            $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
+                            $json = file_get_contents($api);
+                            $json = json_decode($json,true);
+    
+                            array_push(
+                                $contributors,
+                                $json['data'][0]
+                            );
 
-                        $contributors = array(
-                            'id' => 'ids',
-                            'profile' => 'profiles',
-                            'images' => 'images'
-                        );
+                        };
         
                         //
                         $data[] = [
@@ -490,10 +498,10 @@
 
                     }
 
-                    $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=prf_8072738b47905";
+                    //$api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=prf_8072738b47905";
 
-                    $json = file_get_contents($api);
-                    $json = json_decode($json,true);
+                    //$json = file_get_contents($api);
+                    //$json = json_decode($json,true);
 
                     $code = 200;
                     $message = "OK";
@@ -526,7 +534,7 @@
                     'total' => $total
                 ],
                 'data' => $data,
-                'json' => $json['data'][0],
+                //'json' => $json['data'][0],
                 'log' => [
                     'process' => $process_id = $this->token->process_id(),
                     'event' => $event_id = $this->token->event_id($process_id)
