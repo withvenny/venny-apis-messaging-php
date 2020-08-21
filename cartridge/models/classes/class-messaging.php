@@ -460,6 +460,9 @@
 
                         $contributors=[];
 
+                        print_r($contributors);
+                        exit;
+
                         foreach(json_decode($row['thread_participants']['contributors']) as $contributor){
 
                             /*
