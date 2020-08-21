@@ -475,7 +475,7 @@
                         */
 
                         echo json_encode($row['profile_id']);
-                        echo var_dump($row['thread_participants'][0]['contributors']);
+                        echo json_encod($row['thread_participants']);
                         exit;
 
                         foreach(json_decode($row['thread_participants']['contributors']) as $contributor){
