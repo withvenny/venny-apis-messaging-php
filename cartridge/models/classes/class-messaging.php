@@ -483,7 +483,8 @@
                         exit;
                         */
 
-                        foreach(json_encode($row['thread_participants']['contributors']) as $contributor) {
+                        foreach($row['thread_participants'] as $participants => $participant) {
+                        //for($row = 0; $row < 4; $row++) {
 
                             /*
                             $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
@@ -491,6 +492,12 @@
                                 echo  "$value<br />";
                             }
                             */
+
+                            if(
+                                is_array($participant) && 
+                                isset($participant['contributor']) && 
+                                !empty($participant['contributor'])
+                            ){
 
                             $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $json = file_get_contents($api);
@@ -500,6 +507,7 @@
                                 $contributors,
                                 $json['data'][0]
                             );
+                        }
 
                         };
 
