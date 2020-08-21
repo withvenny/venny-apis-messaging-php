@@ -460,6 +460,11 @@
 
                         $contributors=[];
 
+                        array_push(
+                            $contributors,
+                            $json['data'][0]
+                        );
+
                         print_r($contributors);
                         exit;
 
