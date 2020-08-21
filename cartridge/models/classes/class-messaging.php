@@ -474,6 +474,7 @@
                         exit;
                         */
 
+                        echo json_encode($row['profile_id']);
                         echo json_encode($row['thread_participants']['contributors']);
                         exit;
 
