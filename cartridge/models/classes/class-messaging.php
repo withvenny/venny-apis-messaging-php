@@ -474,14 +474,16 @@
                         exit;
                         */
 
+                        /*
                         echo json_encode($row['profile_id']);
                         $left = json_encode($row['thread_participants']);
                         echo json_decode($left);
                         echo json_decode($left[0]);
                         echo json_decode($left['contributors'],true);
                         exit;
+                        */
 
-                        foreach(json_decode($row['thread_participants']['contributors']) as $contributor){
+                        foreach($row['thread_participants']['contributors'] as $contributor) {
 
                             /*
                             $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
