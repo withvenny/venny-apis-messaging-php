@@ -485,9 +485,9 @@
 
                         $participants = json_decode($row['thread_participants']);
 
-                        echo var_dump($participants);
-                        echo var_dump($participants->contributors);
-                        exit;
+                        //echo var_dump($participants);
+                        //echo var_dump($participants->contributors);
+                        //exit;
 
                         foreach($participants['contributors'] as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
