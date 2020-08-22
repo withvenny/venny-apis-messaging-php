@@ -483,7 +483,7 @@
                         exit;
                         */
 
-                        foreach($row['thread_participants'] as $participants => $participant) {
+                        foreach($row->thread_participants->contributors as $participants => $participant) {
                         //for($row = 0; $row < 4; $row++) {
 
                             /*
