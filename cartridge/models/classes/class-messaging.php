@@ -504,7 +504,7 @@
                             $profile = json_decode($profile,true);
 
                             echo print_r($profile);
-                            echo print_r($profile->data);
+                            echo print_r(json_decode($profile['data']));
                             exit;
     
                             array_push(
