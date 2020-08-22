@@ -485,7 +485,7 @@
 
                         $participants = json_encode($row['thread_participants']);
 
-                        foreach($participants->contributors as $contributor) {
+                        foreach($participants['contributors'] as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
 
                             /*
