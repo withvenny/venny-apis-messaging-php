@@ -483,7 +483,7 @@
                         exit;
                         */
 
-                        $participants = json_encode($row['thread_participants']);
+                        $participants = json_decode($row['thread_participants']);
 
                         echo var_dump($participants);
                         echo var_dump($participants->contributors);
