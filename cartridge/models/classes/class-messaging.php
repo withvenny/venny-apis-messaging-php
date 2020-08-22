@@ -501,11 +501,11 @@
 
                             $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $profile = file_get_contents($api);
-                            $profile = json_decode($profile,true);
+                            //$profile = json_encode($profile);
 
-                            echo print_r($profile);
-                            echo print_r(json_encode($profile['data']));
-                            exit;
+                            //echo print_r($profile);
+                            //echo print_r(json_encode($profile['data']));
+                            //exit;
     
                             array_push(
                                 $contributors,
