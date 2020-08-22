@@ -505,7 +505,7 @@
 
                             //echo print_r($profile);
                             echo print_r(json_encode($profile['data']));
-                            //exit;
+                            exit;
     
                             array_push(
                                 $contributors,
