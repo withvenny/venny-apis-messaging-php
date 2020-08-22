@@ -489,7 +489,7 @@
                         //echo var_dump($participants->contributors);
                         //exit;
 
-                        foreach($participants['contributors'] as $contributor) {
+                        foreach($participants->contributors as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
 
                             /*
