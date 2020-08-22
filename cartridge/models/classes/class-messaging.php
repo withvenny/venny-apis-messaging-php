@@ -503,7 +503,8 @@
                             $profile = file_get_contents($api);
                             $profile = json_decode($profile,true);
 
-                            echo var_dump($profile);
+                            echo print_r($profile);
+                            echo print_r($profile->data);
                             exit;
     
                             array_push(
