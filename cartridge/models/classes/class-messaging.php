@@ -495,8 +495,8 @@
 
                             if(
                                 is_array($participant) && 
-                                isset($participant['contributor']) && 
-                                !empty($participant['contributor'])
+                                isset($participant->contributor) && 
+                                !empty($participant->contributor)
                             ){
 
                             $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
