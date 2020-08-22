@@ -503,8 +503,8 @@
                             $profile = file_get_contents($api);
                             $profile = json_decode($profile,true);
 
-                            echo var_dump($profile);
-                            exit;
+                            //echo var_dump($profile);
+                            //exit;
     
                             array_push(
                                 $contributors,
