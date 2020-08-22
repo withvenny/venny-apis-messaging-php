@@ -509,7 +509,7 @@
     
                             array_push(
                                 $contributors,
-                                $profile['data'][0]
+                                json_encode($profile['data'][0])
                             );
 
                         };
