@@ -509,12 +509,12 @@
     
                             array_push(
                                 $contributors,
-                                $profile['data']
+                                $profile['data'][0]
                             );
 
                         };
 
-                        print_r($contributors);
+                        //print_r($contributors);
                         exit;
         
                         //
