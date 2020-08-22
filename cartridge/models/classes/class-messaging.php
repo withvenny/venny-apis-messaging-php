@@ -509,7 +509,7 @@
     
                             array_push(
                                 $contributors,
-                                $profile['data'][0]
+                                $profile['data']
                             );
 
                         };
