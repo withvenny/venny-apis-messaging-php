@@ -504,19 +504,18 @@
                             $profile = json_encode($profile);
 
                             // Declare a json string 
-                            $json = '{"geeks": 7551119}'; 
+                            //$json = '{"geeks": 7551119}'; 
 
                             // Use json_decode() function to 
                             // decode a string 
-                            $obj = json_decode($json); 
+                            //$obj = json_decode($json); 
 
                             // Display the value of json object 
-                            print $obj->{'geeks'}; 
+                            //print $obj->{'geeks'}; 
 
                             echo print_r(json_decode($profile));
-                            echo $profile['log'];
-                            echo var_dump($profile['log']);
-                            echo var_dump(json_decode($profile['log']),TRUE);
+                            echo $profile->{'log'};
+                            //echo var_dump($profile['log']);
                             //echo var_dump(json_decode($profile));
                             //echo print_r(json_decode($profile->data));
                             //echo print_r(json_encode($profile['data'][0]));
