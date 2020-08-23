@@ -485,12 +485,15 @@
 
                         $participants = json_decode($row['thread_participants']);
 
-                        echo var_dump($participants);
+                        //echo var_dump($participants);
                         //echo var_dump($participants->contributors);
-                        exit;
+                        //exit;
 
                         foreach($participants->contributors as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
+
+                            echo "I/'m in...";
+                            exit;
 
                             /*
                             $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
@@ -505,8 +508,8 @@
 
                             // Declare a json string 
                             //$json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
-                            $profiles = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"prf_8072738b47905","attributes":null,"images":{"profile":{"list":["img_0001","img_0002","img_0003","img_0004"],"default":"img_0001"},"cover":{"list":["img_0005","img_0006","img_0007","img_0008"],"default":"img_0005"}},"bio":"I\'m just Adolphus...","headline":"The spirits then vanished","access":"public","status":"live","user":"usr_94b64ffe1g12d","app":"app_thentrlco","when":"2020-04-21 02:09:23.884457+00","name_first":"adolphus","name_last":"nolan","alias":"sonofadolphus"}]}'; 
-                            $threads = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"thr_0001","participants":{"blocked":[],"contributors":["prf_0001","prf_0002","prf_0003"],"administrators":["prf_0001"]}}]}';
+                            //$profiles = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"prf_8072738b47905","attributes":null,"images":{"profile":{"list":["img_0001","img_0002","img_0003","img_0004"],"default":"img_0001"},"cover":{"list":["img_0005","img_0006","img_0007","img_0008"],"default":"img_0005"}},"bio":"I\'m just Adolphus...","headline":"The spirits then vanished","access":"public","status":"live","user":"usr_94b64ffe1g12d","app":"app_thentrlco","when":"2020-04-21 02:09:23.884457+00","name_first":"adolphus","name_last":"nolan","alias":"sonofadolphus"}]}'; 
+                            //$threads = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"thr_0001","participants":{"blocked":[],"contributors":["prf_0001","prf_0002","prf_0003"],"administrators":["prf_0001"]}}]}';
 
                             // Use json_decode() function to 
                             // decode a string 
