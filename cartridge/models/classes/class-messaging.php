@@ -537,7 +537,7 @@
                             //exit;
 
                             $profile_data = $profile->data;
-                            $profile_data = json_encode($profile_data[0]);
+                            $profile_data = json_decode($profile_data[0]);
 
                             $contributor_id=$profile_data->id;
                             $contributor_images=$profile_data->images;
