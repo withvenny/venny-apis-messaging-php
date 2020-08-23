@@ -492,8 +492,8 @@
                         foreach($participants->contributors as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
 
-                            echo "I/'m in...";
-                            exit;
+                            //echo "I/'m in...";
+                            //exit;
 
                             /*
                             $fruits = array ("Orange", "Apple", "Banana",  "Cherry", " Mango");
@@ -502,9 +502,12 @@
                             }
                             */
 
-                            $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
-                            $profile = file_get_contents($api);
+                            $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
+                            $profile = file_get_contents($response);
                             $profile = json_encode($profile);
+
+                            echo $profile;
+                            exit;
 
                             // Declare a json string 
                             //$json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
