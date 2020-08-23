@@ -537,7 +537,7 @@
                             //exit;
 
                             //$profile_data = json_decode($profile->data);
-                            echo var_dump(json_encode($profile));
+                            echo var_dump(json_encode($profile,TRUE));
                             exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
