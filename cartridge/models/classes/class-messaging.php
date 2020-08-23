@@ -504,7 +504,7 @@
 
                             $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $profile = file_get_contents($response);
-                            $profile = json_decode($profile);
+                            $profile = json_encode($profile->data[0]);
 
                             echo $profile;
                             exit;
@@ -516,8 +516,8 @@
 
                             // Use json_decode() function to 
                             // decode a string 
-                            $profile = json_decode($profiles); 
-                            $thread = json_decode($threads); 
+                            //$profile = json_decode($profiles); 
+                            //$thread = json_decode($threads); 
 
                             // Display the value of json object 
                             $data = $thread->data;
