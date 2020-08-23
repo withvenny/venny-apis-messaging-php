@@ -511,9 +511,9 @@
                             $obj = json_decode($json); 
 
                             // Display the value of json object 
+                            print $obj; 
                             print $obj->{'geeks'}; 
                             print json_encode($obj->{'greetings'});
-                            var_dump($obj['greetings']);
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
