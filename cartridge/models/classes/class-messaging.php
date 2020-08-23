@@ -536,9 +536,12 @@
                             //echo print_r(json_encode($profile['data'][0]));
                             //exit;
 
-                            $contributor_id=json_encode($profile->data[0]->id);
-                            $contributor_images=json_encode($profile->data[0]->images);
-                            $contributor_alias=json_encode($profile->data[0]->alias);
+                            $profile_data = $profile->data;
+                            $profile_data = $profile_data[0];
+
+                            $contributor_id=$profile_data->id;
+                            $contributor_images=$profile_data->images;
+                            $contributor_alias=$profile_data->alias;
     
                             array_push(
                                 $contributors,
