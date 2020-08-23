@@ -512,7 +512,7 @@
                             $obj = json_decode($json); 
 
                             // Display the value of json object 
-                            print $obj; 
+                            echo var_dump($obj);
                             print $obj->{'message'}; 
 
                             //echo print_r(json_decode($profile));
