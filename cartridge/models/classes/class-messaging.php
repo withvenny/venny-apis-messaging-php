@@ -513,7 +513,9 @@
 
                             // Display the value of json object 
                             echo var_dump($obj);
-                            print $obj->{'message'}; 
+                            echo var_dump($obj->{'status'});
+                            echo var_dump($obj->{'message'});
+                            echo var_dump($obj['data'][0]);
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
