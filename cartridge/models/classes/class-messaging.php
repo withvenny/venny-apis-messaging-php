@@ -504,7 +504,8 @@
                             $profile = json_encode($profile);
 
                             // Declare a json string 
-                            $json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
+                            //$json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
+                            $json = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"prf_8072738b47905","attributes":null,"images":{"profile":{"list":["img_0001","img_0002","img_0003","img_0004"],"default":"img_0001"},"cover":{"list":["img_0005","img_0006","img_0007","img_0008"],"default":"img_0005"}},"bio":"I\'m just Adolphus...","headline":"The spirits then vanished","access":"public","status":"live","user":"usr_94b64ffe1g12d","app":"app_thentrlco","when":"2020-04-21 02:09:23.884457+00","name_first":"adolphus","name_last":"nolan","alias":"sonofadolphus"}]}'; 
 
                             // Use json_decode() function to 
                             // decode a string 
@@ -512,8 +513,7 @@
 
                             // Display the value of json object 
                             print $obj; 
-                            print $obj->{'geeks'}; 
-                            print json_encode($obj->{'greetings'});
+                            print $obj->{'message'}; 
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
