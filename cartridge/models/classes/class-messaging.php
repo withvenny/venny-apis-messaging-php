@@ -535,10 +535,18 @@
                             //echo print_r(json_decode($profile->data));
                             //echo print_r(json_encode($profile['data'][0]));
                             //exit;
+
+                            $contributor_id=json_encode($profile->data[0]->id);
+                            $contributor_images=json_encode($profile->data[0]->images);
+                            $contributor_alias=json_encode($profile->data[0]->alias);
     
                             array_push(
                                 $contributors,
-                                array('id'=>$profile->json_encode(data[0])->id,'images'=>$profile,'alias'=>$profile)
+                                array(
+                                    'id'=>$contributor_id,
+                                    'images'=>$contributor_images,
+                                    'alias'=>$contributor_alias
+                                )
                             );
 
                         };
