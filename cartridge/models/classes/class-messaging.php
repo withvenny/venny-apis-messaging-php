@@ -514,8 +514,8 @@
                             $thread = json_decode($threads); 
 
                             // Display the value of json object 
-                            echo var_dump($profile->data);
-                            echo var_dump($thread->data);
+                            $data = $profile->data;
+                            echo var_dump($data);
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
