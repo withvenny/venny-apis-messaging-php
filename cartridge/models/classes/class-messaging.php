@@ -517,6 +517,9 @@
                             $data = $profile->data;
                             echo var_dump($data);
 
+                            $participants = $data->participants;
+                            echo var_dump($participants);
+
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
                             //echo $profile->log;
