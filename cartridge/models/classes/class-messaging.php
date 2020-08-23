@@ -514,7 +514,7 @@
                             $thread = json_decode($threads); 
 
                             // Display the value of json object 
-                            $data = $profile->data;
+                            $data = $thread->data;
                             echo var_dump($data);
 
                             $participants = $data[0]->participants;
