@@ -538,7 +538,7 @@
     
                             array_push(
                                 $contributors,
-                                array('id'=>$profile->data[0]->id,'images'=>$profile,'alias'=>$profile)
+                                array('id'=>$profile->json_encode(data[0])->id,'images'=>$profile,'alias'=>$profile)
                             );
 
                         };
