@@ -510,8 +510,8 @@
 
                             // Use json_decode() function to 
                             // decode a string 
-                            $profile = json_decode($profiles); 
-                            $thread = json_decode($threads); 
+                            $profile = json_decode($profiles,TRUE); 
+                            $thread = json_decode($threads,TRUE); 
 
                             // Display the value of json object 
                             echo var_dump($profile->data);
