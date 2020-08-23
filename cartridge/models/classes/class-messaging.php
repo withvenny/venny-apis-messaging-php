@@ -505,6 +505,8 @@
 
                             echo print_r(json_decode($profile));
                             echo $profile['log'];
+                            echo var_dump($profile['log']);
+                            echo var_dump(json_decode($profile['log']),TRUE);
                             //echo var_dump(json_decode($profile));
                             //echo print_r(json_decode($profile->data));
                             //echo print_r(json_encode($profile['data'][0]));
