@@ -553,7 +553,7 @@
                             'attributes' => json_decode($row['thread_attributes']),
                             'title' => $row['thread_title'],
                             'participants' => json_decode($row['thread_participants']),
-                            'contributors' => json_decode($contributors),
+                            'contributors' => json_encode($contributors),
                             'preview' => $row['thread_preview'],
                             'profile' => $row['profile_id'],
                             'app' => $row['app_id'],
