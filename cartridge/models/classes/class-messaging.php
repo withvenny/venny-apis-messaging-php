@@ -512,7 +512,8 @@
 
                             // Display the value of json object 
                             print $obj->{'geeks'}; 
-                            print $obj->{'greetings'}; 
+                            print json_encode($obj->{'greetings'});
+                            print json_encode($obj['greetings'][1]);
 
                             echo print_r(json_decode($profile));
                             echo $profile->{'log'};
