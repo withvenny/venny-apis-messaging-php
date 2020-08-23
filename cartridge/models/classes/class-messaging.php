@@ -504,10 +504,10 @@
 
                             $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $profile = file_get_contents($response);
-                            $profile = json_encode($profile[0]->data);
+                            $profile = json_encode($profile->data);
 
                             echo $profile;
-                            exit;
+                            //exit;
 
                             // Declare a json string 
                             //$json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
@@ -520,11 +520,11 @@
                             //$thread = json_decode($threads); 
 
                             // Display the value of json object 
-                            $data = $thread->data;
-                            echo var_dump($data);
+                            //$data = $thread->data;
+                            //echo var_dump($data);
 
-                            $participants = $data[0]->participants;
-                            echo var_dump($participants);
+                            //$participants = $data[0]->participants;
+                            //echo var_dump($participants);
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
@@ -534,11 +534,11 @@
                             //echo var_dump(json_decode($profile));
                             //echo print_r(json_decode($profile->data));
                             //echo print_r(json_encode($profile['data'][0]));
-                            exit;
+                            //exit;
     
                             array_push(
                                 $contributors,
-                                json_decode($profile->data[0])
+                                $profile
                             );
 
                         };
