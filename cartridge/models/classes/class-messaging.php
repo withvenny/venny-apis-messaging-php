@@ -503,8 +503,8 @@
                             $profile = file_get_contents($api);
                             $profile = json_encode($profile);
 
-                            echo print_r(json_encode($profile));
-                            echo print_r(json_encode($profile['data'][0]));
+                            echo print_r(json_decode($profile));
+                            //echo print_r(json_encode($profile['data'][0]));
                             exit;
     
                             array_push(
