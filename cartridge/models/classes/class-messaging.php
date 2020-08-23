@@ -515,7 +515,7 @@
                             echo var_dump($obj);
                             echo var_dump($obj->{'status'});
                             echo var_dump($obj->{'message'});
-                            echo var_dump(json_decode($obj['data'][0],TRUE,JSON_PRETTY_PRINT));
+                            echo var_dump($obj->{'data'});
 
                             //echo print_r(json_decode($profile));
                             //echo $profile->{'log'};
