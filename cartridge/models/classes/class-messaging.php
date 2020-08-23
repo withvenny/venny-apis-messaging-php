@@ -506,7 +506,7 @@
                             $profile = file_get_contents($response);
                             $profile = json_encode($profile);
 
-                            echo $profile;
+                            //echo $profile;
                             //exit;
 
                             // Declare a json string 
@@ -543,8 +543,8 @@
 
                         };
 
-                        echo print_r($contributors);
-                        exit;
+                        //echo print_r($contributors);
+                        //exit;
         
                         //
                         $data[] = [
