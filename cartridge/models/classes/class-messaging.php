@@ -538,7 +538,7 @@
 
                             //$profile_data = json_decode($profile->data);
                             echo var_dump(json_encode($profile,TRUE,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
-                            exit;
+                            echo "new"; exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
                             $contributor_id=$profile_data->id;
