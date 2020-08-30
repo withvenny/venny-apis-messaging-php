@@ -373,7 +373,7 @@
                 } elseif(!empty($request['profile'])) {
 
                     //
-                    $participants = json_decode($request['participants'], true);
+                    //$participants = json_decode($request['participants'], true);
     
                     $conditions.= ' WHERE ';
                     $conditions.= 'thread_participants ->\'contributors\' @> \''. json_encode($request['profile']) . '\'::jsonb';
@@ -389,8 +389,8 @@
                     $sql.= $conditions;
                     //$sql.= $subset;
                     
-                    echo json_encode($request['participants']['contributors']);
-                    echo '<br/>';
+                    //echo json_encode($request['participants']['contributors']);
+                    //echo '<br/>';
                     echo $sql; exit;
     
                     //
