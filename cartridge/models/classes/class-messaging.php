@@ -318,9 +318,9 @@
                 $columns = "
 
                     thread_ID,
-                    thread_attributes,
+                    thread_attributes::jsonb,
                     thread_title,
-                    thread_participants,
+                    thread_participants::jsonb,
                     thread_preview,
                     profile_ID,
                     app_ID,
@@ -391,7 +391,7 @@
                     
                     //echo json_encode($request['participants']['contributors']);
                     //echo '<br/>';
-                    echo $sql; exit;
+                    //echo $sql; exit;
     
                     //
                     $statement = $this->pdo->prepare($sql);
