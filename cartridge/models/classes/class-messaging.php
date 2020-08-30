@@ -536,9 +536,9 @@
                             //echo print_r(json_encode($profile['data'][0]));
                             //exit;
 
-                            //$profile_data = json_decode($profile->data);
-                            //echo var_dump($profile);
-                            //echo "new"; exit;
+                            $profile_data = json_decode($profile->data);
+                            echo var_dump($profile);
+                            echo "new"; exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
                             $contributor_id=$profile_data->id;
