@@ -360,7 +360,7 @@
                     
                     //echo json_encode($request['id']);
                     //echo '<br/>';
-                    echo $sql; exit;
+                    //echo $sql; exit;
 
                     //
                     $statement = $this->pdo->prepare($sql);
@@ -389,9 +389,9 @@
                     $sql.= $conditions;
                     //$sql.= $subset;
                     
-                    //echo json_encode($request['participants']['contributors']);
-                    //echo '<br/>';
-                    //echo $sql; exit;
+                    echo json_encode($request['participants']['contributors']);
+                    echo '<br/>';
+                    echo $sql; exit;
     
                     //
                     $statement = $this->pdo->prepare($sql);
@@ -537,8 +537,8 @@
                             //exit;
 
                             //$profile_data = json_decode($profile->data);
-                            echo var_dump($profile);
-                            echo "new"; exit;
+                            //echo var_dump($profile);
+                            //echo "new"; exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
                             $contributor_id=$profile_data->id;
