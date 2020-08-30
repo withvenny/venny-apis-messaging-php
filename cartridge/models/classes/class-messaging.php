@@ -431,7 +431,7 @@
                     //echo $conditions . 'conditions2<br/>';
                     //echo $refinements . 'refinements2<br/>';
 
-                    //echo $sql; exit;
+                    echo $sql; exit;
                     
                     //
                     $statement = $this->pdo->prepare($sql);
