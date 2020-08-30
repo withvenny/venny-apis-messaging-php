@@ -538,8 +538,8 @@
                             //echo print_r(json_encode($profile['data'][0]));
                             //exit;
 
-                            $profile_data = json_encode($profile[data][0]);
-                            echo var_dump($profile);
+                            $profile_data = $profile['data'][0];
+                            echo var_dump($profile_data);
                             echo "new"; exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
