@@ -531,6 +531,9 @@
                             echo json_encode($profile['data'][0]['id']);
                             echo json_encode($profile['data'][0]['alias']);
                             echo json_encode($profile['data'][0]['images']);
+                            echo json_encode($profile->data[0]->id);
+                            echo json_encode($profile->data[0]->alias);
+                            echo json_encode($profile->data[0]->images);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
