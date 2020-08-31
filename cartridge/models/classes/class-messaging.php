@@ -509,14 +509,18 @@
                             //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                             //$result = curl_exec($ch);
 
-                            $venny = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
-                            curl_setopt($venny, CURLOPT_RETURNTRANSFER, 1);
-                            curl_setopt($venny, CURLOPT_SSL_VERIFYPEER, 0);
-                            curl_setopt($venny, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-                            curl_setopt($venny, CURLOPT_CONNECTTIMEOUT, 5);
-                            curl_setopt($venny, CURLOPT_TIMEOUT, 3);
-                            curl_setopt($venny, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-                            $profile = curl_exec($venny);
+                            $url = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id={$contributor}";
+
+                            $ch = curl_init($url);
+                            curl_setopt($ch, CURLOPT_URL, $url);
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+                            curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+                            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+                            $profile = curl_exec($ch);
+                            curl_close($ch);
 
                             echo var_dump($profile);
                             exit;
