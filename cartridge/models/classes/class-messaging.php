@@ -506,6 +506,7 @@
                             $profile = file_get_contents($response);
 
                             var_dump($profile);
+                            exit;
 
                             $contributor_id=$profile[0]->data->id;
                             $contributor_images=$profile_data->images;
