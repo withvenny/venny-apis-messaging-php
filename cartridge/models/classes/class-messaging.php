@@ -522,7 +522,8 @@
                             $profile = curl_exec($ch);
                             curl_close($ch);
 
-                            echo var_dump($profile);
+                            print_r($profile);
+                            var_dump($profile);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
