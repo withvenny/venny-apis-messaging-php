@@ -506,6 +506,8 @@
                             $profile = file_get_contents($response);
 
                             echo print_r($profile);
+                            echo print_r($profile->status);
+                            echo print_r($profile->message);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
