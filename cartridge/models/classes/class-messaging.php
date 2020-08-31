@@ -525,6 +525,8 @@
                             print_r($profile);
                             var_dump($profile);
                             echo json_encode($profile['status']);
+                            echo json_encode($profile['message']);
+                            echo json_encode($profile['log']['process']);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
