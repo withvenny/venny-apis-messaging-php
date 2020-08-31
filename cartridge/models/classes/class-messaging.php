@@ -533,14 +533,14 @@
                             //echo json_encode($profile['data'][0]['images']);
                             //exit;
 
-                            if(isset($profile['data'][0]['id']))        {$contributor_id=$profile['data'][0]['id'];}else{$contributor_id='';}
-                            if(isset($profile['data'][0]['images']))    {$contributor_images=$profile['data'][0]['images'];}else{$contributor_images={};}
-                            if(isset($profile['data'][0]['alias']))     {$contributor_alias=$profile['data'][0]['alias'];}else{$contributor_alias='';}
+                            if(isset($profile['data'][0]['id'])){$contributor_id=$profile['data'][0]['id'];}else{$contributor_id='';}
+                            if(isset($profile['data'][0]['images'])){$contributor_images=$profile['data'][0]['images'];}else{$contributor_images='{}';}
+                            if(isset($profile['data'][0]['alias'])){$contributor_alias=$profile['data'][0]['alias'];}else{$contributor_alias='';}
     
                             array_push(
                                 $contributors,
                                 array(
-                                    is'id'=>$contributor_id,
+                                    'id'=>$contributor_id,
                                     'images'=>$contributor_images,
                                     'alias'=>$contributor_alias
                                 )
