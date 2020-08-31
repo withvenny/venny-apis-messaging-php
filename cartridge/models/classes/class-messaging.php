@@ -538,11 +538,11 @@
                             //echo print_r(json_encode($profile['data'][0]));
                             //exit;
 
-                            $profile_data = json_decode($profile['data']);
-                            echo json_encode($profile_data);
-                            echo $profile_data['status'];
-                            echo $profile_data['metadata'];
-                            echo $profile_data['log'];
+                            $profile_data = json_encode($profile['data']);
+                            echo json_decode($profile_data);
+                            echo json_decode($profile_data['status']);
+                            echo json_decode($profile_data['metadata']);
+                            echo json_decode($profile_data['log']);
                             exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
