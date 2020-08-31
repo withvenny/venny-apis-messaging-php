@@ -504,47 +504,8 @@
 
                             $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $profile = file_get_contents($response);
-                            echo stripslashes(json_encode($profile,TRUE));
-                            //exit; 
-                            //$profile = stripslashes(json_encode($profile,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
 
-                            //echo $profile;
-                            //exit;
-
-                            // Declare a json string 
-                            //$json = '{"geeks": 7551119,"greetings":["hi","hello","hey"]}'; 
-                            //$profiles = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"prf_8072738b47905","attributes":null,"images":{"profile":{"list":["img_0001","img_0002","img_0003","img_0004"],"default":"img_0001"},"cover":{"list":["img_0005","img_0006","img_0007","img_0008"],"default":"img_0005"}},"bio":"I\'m just Adolphus...","headline":"The spirits then vanished","access":"public","status":"live","user":"usr_94b64ffe1g12d","app":"app_thentrlco","when":"2020-04-21 02:09:23.884457+00","name_first":"adolphus","name_last":"nolan","alias":"sonofadolphus"}]}'; 
-                            //$threads = '{"status":200,"message":"SUCCESSFUL","data":[{"id":"thr_0001","participants":{"blocked":[],"contributors":["prf_0001","prf_0002","prf_0003"],"administrators":["prf_0001"]}}]}';
-
-                            // Use json_decode() function to 
-                            // decode a string 
-                            //$profile = json_decode($profiles); 
-                            //$thread = json_decode($threads); 
-
-                            // Display the value of json object 
-                            //$data = $thread->data;
-                            //echo var_dump($data);
-
-                            //$participants = $data[0]->participants;
-                            //echo var_dump($participants);
-
-                            //echo print_r(json_decode($profile));
-                            //echo $profile->{'log'};
-                            //echo $profile->log;
-                            //echo $profile['log']['process'];
-                            //echo var_dump($profile['log']);
-                            //echo var_dump(json_decode($profile));
-                            //echo print_r(json_decode($profile->data));
-                            //echo print_r(json_encode($profile['data'][0]));
-                            //exit;
-
-                            $profile_data = json_encode($profile['data']);
-                            echo json_decode($profile_data);
-                            echo json_decode($profile_data['status']);
-                            echo json_decode($profile_data['metadata']);
-                            echo json_decode($profile_data['log']);
-                            exit;
-                            $profile_data = json_decode($profile_data[0],TRUE);
+                            var_dump($profile);
 
                             $contributor_id=$profile[0]->data->id;
                             $contributor_images=$profile_data->images;
