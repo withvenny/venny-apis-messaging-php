@@ -540,9 +540,9 @@
                             array_push(
                                 $contributors,
                                 array(
-                                    'id'=>stripslashes($contributor_id),
-                                    'images'=>stripslashes($contributor_images),
-                                    'alias'=>stripslashes($contributor_alias)
+                                    'id'=>$contributor_id,
+                                    'images'=>$contributor_images,
+                                    'alias'=>$contributor_alias
                                 )
                             );
 
