@@ -533,16 +533,16 @@
                             //echo json_encode($profile['data'][0]['images']);
                             //exit;
 
-                            $contributor_id=json_encode($profile['data'][0]['id']);
-                            $contributor_images=json_encode($profile['data'][0]['images']);
-                            $contributor_alias=json_encode($profile['data'][0]['alias']);
+                            $contributor_id=$profile['data'][0]['id'];
+                            $contributor_images=$profile['data'][0]['images'];
+                            $contributor_alias=$profile['data'][0]['alias'];
     
                             array_push(
                                 $contributors,
                                 array(
-                                    'id'=>$contributor_id,
-                                    'images'=>$contributor_images,
-                                    'alias'=>$contributor_alias
+                                    'id'=>stripslashes($contributor_id),
+                                    'images'=>stripslashes($contributor_images),
+                                    'alias'=>stripslashes($contributor_alias)
                                 )
                             );
 
