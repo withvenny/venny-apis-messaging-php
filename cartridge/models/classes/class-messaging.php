@@ -505,7 +505,7 @@
                             $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
                             $profile = file_get_contents($response);
 
-                            var_dump($profile);
+                            echo print_r($profile);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
