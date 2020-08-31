@@ -528,6 +528,9 @@
                             echo json_encode($profile['message']);
                             echo json_encode($profile['log']['process']);
                             echo json_encode($profile['data'][0]);
+                            echo json_encode($profile['data'][0]['id']);
+                            echo json_encode($profile['data'][0]['alias']);
+                            echo json_encode($profile['data'][0]['images']);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
