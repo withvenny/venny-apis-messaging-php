@@ -502,8 +502,21 @@
                             }
                             */
 
-                            $response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
-                            $profile = file_get_contents($response);
+                            //$response = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
+                            //$profile = file_get_contents($response);
+
+                            //$ch = curl_init('http://api.bitly.com/v3/shorten?login=user&apiKey=key&longUrl=url');
+                            //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            //$result = curl_exec($ch);
+
+                            $venny = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $contributor;
+                            curl_setopt($venny, CURLOPT_RETURNTRANSFER, 1);
+                            curl_setopt($venny, CURLOPT_SSL_VERIFYPEER, 0);
+                            curl_setopt($venny, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                            curl_setopt($venny, CURLOPT_CONNECTTIMEOUT, 5);
+                            curl_setopt($venny, CURLOPT_TIMEOUT, 3);
+                            curl_setopt($venny, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+                            $profile = curl_exec($venny);
 
                             echo var_dump($profile);
                             exit;
