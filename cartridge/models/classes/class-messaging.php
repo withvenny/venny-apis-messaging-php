@@ -524,6 +524,7 @@
 
                             print_r($profile);
                             var_dump($profile);
+                            echo json_decode($profile['status']);
                             exit;
 
                             $contributor_id=$profile[0]->data->id;
