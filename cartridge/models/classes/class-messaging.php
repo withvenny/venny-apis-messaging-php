@@ -519,7 +519,7 @@
                             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
                             curl_setopt($ch, CURLOPT_TIMEOUT, 3);
                             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-                            $profile = curl_exec($ch);
+                            $profile = json_decode(curl_exec($ch),TRUE);
                             curl_close($ch);
 
                             print_r($profile);
