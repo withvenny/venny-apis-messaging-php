@@ -539,7 +539,7 @@
                             //exit;
 
                             $profile_data = json_decode($profile->data[0],TRUE);
-                            echo var_dump($profile_data);
+                            echo $profile_data;
                             exit;
                             $profile_data = json_decode($profile_data[0],TRUE);
 
