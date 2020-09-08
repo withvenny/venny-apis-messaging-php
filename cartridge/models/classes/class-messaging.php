@@ -461,12 +461,8 @@
 
                         // Remove the elements who's values are yellow or red
                         $contributors = array();
-                        
-                        $contributors = array(json_decode($row['thread_participants']));
-                        print_r($contributors);
-                        exit;
 
-                        $arr = array_diff(array($row['thread_participants']['contributors']),array($request['profile']));
+                        $arr = array_diff($contributors,array($request['profile']));
                         print_r($arr);
 
                         exit;
