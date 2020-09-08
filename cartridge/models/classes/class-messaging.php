@@ -460,7 +460,7 @@
 
 
                         // Remove the elements who's values are yellow or red
-                        $arr = array_diff(array($row['thread_participants']),array($request['profile']));
+                        $arr = array_diff(array($row['thread_participants']['contributors']),array($request['profile']));
                         print_r($arr);
 
                         exit;
