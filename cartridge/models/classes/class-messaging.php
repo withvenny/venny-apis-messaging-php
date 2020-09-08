@@ -452,17 +452,18 @@
                 //
                 if($statement->rowCount() > 0) {
 
-  // Remove the elements who's values are yellow or red
-  $arr = array_diff($row['thread_participants'],json_decode($request['profile']));
-  print_r($arr);
-  
-                    exit;
-
                     //
                     $data = array();
                 
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
+
+
+                        // Remove the elements who's values are yellow or red
+                        $arr = array_diff($row['thread_participants'],json_decode($request['profile']));
+                        print_r($arr);
+
+                        exit;
 
                         $contributors=[];
 
