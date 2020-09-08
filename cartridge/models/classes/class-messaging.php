@@ -452,6 +452,9 @@
                 //
                 if($statement->rowCount() > 0) {
 
+                    print_r(array_diff($row['thread_participants']),array($request['profile']));
+                    exit;
+
                     //
                     $data = array();
                 
