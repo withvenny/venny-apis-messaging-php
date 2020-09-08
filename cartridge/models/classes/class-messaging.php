@@ -461,8 +461,12 @@
 
                         // Remove the elements who's values are yellow or red
                         $contributors = array();
+                        
+                        $contributors = array_push($row['thread_participants']['contributors']);
+                        print_r($contributors);
+                        exit;
 
-                        $arr = array_diff($contributors,array($request['profile']));
+                        $arr = array_diff(array($row['thread_participants']['contributors']),array($request['profile']));
                         print_r($arr);
 
                         exit;
