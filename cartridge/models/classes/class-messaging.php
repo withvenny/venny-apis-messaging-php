@@ -452,13 +452,10 @@
                 //
                 if($statement->rowCount() > 0) {
 
-                      // Our initial array
-  $arr = array("blue", "green", "red", "yellow", "green", "orange", "yellow", "indigo", "red");
-  print_r($arr);
-
   // Remove the elements who's values are yellow or red
-  $arr = array_diff($arr, array("yellow", "red"));
+  $arr = array_diff($row['thread_participants'],json_decode($request['profile']));
   print_r($arr);
+  
                     exit;
 
                     //
