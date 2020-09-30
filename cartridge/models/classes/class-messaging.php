@@ -462,7 +462,7 @@
                         // Remove the elements who's values are yellow or red
                         $contributors = array();
                         
-                        $contributors = array_push($row['thread_participants']['contributors']);
+                        $contributors = array_push($row['thread_participants']);
                         print_r($contributors);
                         exit;
 
