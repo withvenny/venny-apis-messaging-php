@@ -459,6 +459,7 @@
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
 
                         var_dump($row['thread_participants']);
+                        var_dump($row['thread_participants']['contributors'][0]);
                         exit;
 
                         // Remove the elements who's values are yellow or red
