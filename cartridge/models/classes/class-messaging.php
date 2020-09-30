@@ -459,6 +459,8 @@
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
 
                         print_r($row['thread_participants']);
+                        print_r($row->thread_participants);
+                        //contributors
                         exit;
 
                         // Remove the elements who's values are yellow or red
