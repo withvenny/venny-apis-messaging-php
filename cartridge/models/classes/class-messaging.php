@@ -458,26 +458,30 @@
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
 
-                        var_dump($row['thread_participants']);
-                        $participants = json_decode($row['thread_participants']);
-                        var_dump($participants->contributors);
-                        exit;
+                        //var_dump($row['thread_participants']);
+                        //$participants = json_decode($row['thread_participants']);
+                        //var_dump($participants->contributors);
+                        //exit;
 
+                        /*
                         // Remove the elements who's values are yellow or red
                         $contributors = array();
                         $contributors = array_push($row['thread_participants']['contributors']);
                         print_r($contributors);
                         exit;
+                        */
 
+                        /*
                         $arr = array_diff(array($row['thread_participants']['contributors']),array($request['profile']));
                         print_r($arr);
+                        */
 
-                        exit;
+                        //exit;
 
                         $contributors=[];
 
-                        /*
-                        $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id=" . $row['profile_id'];
+                        
+                        $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=" . $row['profile_id'];
                         $json = file_get_contents($api);
                         $json = json_decode($json,true);
 
@@ -488,7 +492,7 @@
 
                         echo json_encode($contributors);
                         exit;
-                        */
+                        //*/
 
                         /*
                         echo json_encode($row['profile_id']);
