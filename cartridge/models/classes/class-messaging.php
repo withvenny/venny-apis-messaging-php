@@ -478,7 +478,7 @@
 
                         //exit;
 
-                        //$contributors=[];
+                        $contributors=[];
 
                         
                         //$api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=" . $row['profile_id'];
