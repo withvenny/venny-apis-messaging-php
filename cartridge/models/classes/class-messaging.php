@@ -478,20 +478,20 @@
 
                         //exit;
 
-                        $contributors=[];
+                        //$contributors=[];
 
                         
-                        $api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=" . $row['profile_id'];
-                        $json = file_get_contents($api);
-                        $json = json_decode($json,true);
+                        //$api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=" . $row['profile_id'];
+                        //$json = file_get_contents($api);
+                        //$json = json_decode($json,true);
 
-                        array_push(
-                            $contributors,
-                            $json['data'][0]
-                        );
+                        //array_push(
+                        //    $contributors,
+                        //    $json['data'][0]
+                        //);
 
-                        echo json_encode($contributors);
-                        exit;
+                        //echo json_encode($contributors);
+                        //exit;
                         //*/
 
                         /*
