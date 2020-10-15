@@ -896,10 +896,12 @@
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
         
-                        $author = $row['profile_id'];
+                        $author = [];
+                        
+                        $contributor = $row['profile_id'];
 
                         //
-                        $url = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id={$author}";
+                        $url = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id={$contributor}";
 
                         $ch = curl_init($url);
                         curl_setopt($ch, CURLOPT_URL, $url);
@@ -926,8 +928,8 @@
                             )
                         );
 
-                        echo json_encode($author);
-                        exit;
+                        //echo json_encode($author);
+                        //exit;
 
                         //
                         $data[] = [
