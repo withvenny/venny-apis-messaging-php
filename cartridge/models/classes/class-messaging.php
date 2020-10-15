@@ -458,56 +458,9 @@
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
 
-                        //var_dump($row['thread_participants']);
-                        //$participants = json_decode($row['thread_participants']);
-                        //var_dump($participants->contributors);
-                        //exit;
-
-                        /*
-                        // Remove the elements who's values are yellow or red
-                        $contributors = array();
-                        $contributors = array_push($row['thread_participants']['contributors']);
-                        print_r($contributors);
-                        exit;
-                        */
-
-                        /*
-                        $arr = array_diff(array($row['thread_participants']['contributors']),array($request['profile']));
-                        print_r($arr);
-                        */
-
-                        //exit;
-
                         $contributors=[];
 
-                        
-                        //$api = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=" . $row['profile_id'];
-                        //$json = file_get_contents($api);
-                        //$json = json_decode($json,true);
-
-                        //array_push(
-                        //    $contributors,
-                        //    $json['data'][0]
-                        //);
-
-                        //echo json_encode($contributors);
-                        //exit;
-                        //*/
-
-                        /*
-                        echo json_encode($row['profile_id']);
-                        $left = json_encode($row['thread_participants']);
-                        echo json_decode($left);
-                        echo json_decode($left[0]);
-                        echo json_decode($left['contributors'],true);
-                        exit;
-                        */
-
                         $participants = json_decode($row['thread_participants']);
-
-                        //echo var_dump($participants);
-                        //echo var_dump($participants->contributors);
-                        //exit;
 
                         foreach($participants->contributors as $contributor) {
                         //for($row = 0; $row < 4; $row++) {
@@ -832,7 +785,7 @@
                 $columns = "
 
                     message_id,
-                    message_attributes,
+                    message_attributes::jsonb,
                     message_body,
                     message_images,
                     message_deleted,
@@ -943,6 +896,39 @@
                     //
                     while($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
         
+                        $author = $row['profile_id'];
+
+                        //
+                        $url = "https://io-venny-api.herokuapp.com/profiles?app=app_thentrlco&token=tkn_thentrlco&profile=prf_8072738b47905&id={$author}";
+
+                        $ch = curl_init($url);
+                        curl_setopt($ch, CURLOPT_URL, $url);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+                        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+                        $profile = json_decode(curl_exec($ch),TRUE);
+                        curl_close($ch);
+
+                        //
+                        if(isset($profile['data'][0]['id'])){$author_id=$profile['data'][0]['id'];}else{$author_id='';}
+                        if(isset($profile['data'][0]['images'])){$author_images=$profile['data'][0]['images'];}else{$author_images='{}';}
+                        if(isset($profile['data'][0]['alias'])){$author_alias=$profile['data'][0]['alias'];}else{$author_alias='';}
+
+                        array_push(
+                            $author,
+                            array(
+                                'id'=>$author_id,
+                                'images'=>$author_images,
+                                'alias'=>$author_alias
+                            )
+                        );
+
+                        echo json_encode($author);
+                        exit;
+
                         //
                         $data[] = [
 
@@ -952,7 +938,7 @@
                             'images' => json_decode($row['message_images']),
                             'deleted' => $row['message_deleted'],
                             'thread' => $row['thread_id'],
-                            'profile' => $row['profile_id'],
+                            'profile' => $author,
                             'app' => $row['app_id'],
                             'when' => $row['time_finished'],
                             'updated' => $row['time_updated']
